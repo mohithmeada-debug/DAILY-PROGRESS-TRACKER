@@ -74,9 +74,9 @@ const Notes: React.FC = () => {
         setEditContent(note.content);
     };
 
-    if (isLoading && notes.length === 0) {
-        return <LoadingSkeleton type="/dashboard" />;
-    }
+   if (isLoading && notes.length === 0) {
+    return <div className="text-center py-10">Loading...</div>;
+}
 
     return (
         <motion.div
