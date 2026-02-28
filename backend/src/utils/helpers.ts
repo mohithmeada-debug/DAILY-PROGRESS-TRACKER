@@ -1,11 +1,13 @@
 import jwt from 'jsonwebtoken';
-
 export const generateToken = (userId: string): string => {
-  const secret = process.env.JWT_SECRET || 'fallback-secret';
-  const expiresIn = process.env.JWT_EXPIRES_IN || '7d';
-  return jwt.sign({ id: userId }, secret, { expiresIn });
-};
+  const secret = process.env.JWT_SECRET as string;
 
+  return jwt.sign(
+    { id: userId },
+    secret,
+    { expiresIn: '7d' }
+  );
+};
 export const getTodayDateString = (): string => {
   const now = new Date();
   return now.toISOString().split('T')[0]; // YYYY-MM-DD
