@@ -75,7 +75,7 @@ const Notes: React.FC = () => {
     };
 
     if (isLoading && notes.length === 0) {
-        return <LoadingSkeleton type="dashboard" />;
+        return <LoadingSkeleton type="page" />;
     }
 
     return (
